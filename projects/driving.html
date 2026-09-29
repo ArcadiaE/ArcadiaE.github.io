@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustainable Personalised Driving — Yike Zhang</title>
+<meta name="description" content="MSc dissertation: human-in-the-loop multi-objective Bayesian optimisation of eco-driving interfaces in a VR simulator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4; --card:#ffffff; --ink:#17140f; --ink-2:#5f594f; --ink-3:#9a9284;
+    --line:#e6e0d4; --accent:#a8322a;
+    --serif:"Fraunces",Georgia,"Songti SC","STSong","SimSun",serif;
+    --sans:"Inter",-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8b8b2}
+  a:hover{border-bottom-color:var(--accent)}
+  .wrap{max-width:780px;margin:0 auto;padding:0 28px}
+
+  nav{border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .back{font-family:var(--mono);font-size:13px;color:var(--ink-2);border:none}
+  .back:hover{color:var(--accent)}
+  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
+  .lang:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{padding:64px 0 0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,44px);line-height:1.15;letter-spacing:-.015em;margin:0 0 16px}
+  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 36px}
+  .banner{margin:0 0 40px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .banner img{width:100%;display:block}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 44px}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
+  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em}
+  .stat span{font-size:12.5px;color:var(--ink-3)}
+
+  .prose p{margin:0 0 18px;max-width:66ch}
+  h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:44px 0 14px}
+  figure{margin:28px 0}
+  figure img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+  figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:10px;letter-spacing:.04em}
+
+  .links{margin:48px 0 0;padding:22px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:20px 0 44px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="back" href="../index.html"><span data-en="← Yike Zhang" data-zh="← 张屹柯">← Yike Zhang</span></a>
+  <button class="lang" id="langBtn" type="button">中文</button>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="eyebrow" data-en="MSc dissertation · UCL · 2026" data-zh="硕士毕业论文 · UCL · 2026">MSc dissertation · UCL · 2026</div>
+  <h1 data-en="Sustainable Personalised Driving" data-zh="可持续的个性化驾驶">Sustainable Personalised Driving</h1>
+  <p class="lede" data-en="Eco-driving displays are usually designed once, the same for every driver. This project asks what happens when an optimiser tunes the display for each person, with that person in the loop."
+     data-zh="生态驾驶的提示界面通常只设计一次，所有人共用。这个项目想问的是：如果让优化器针对每个人分别调整界面，而这个人的感受直接参与优化，会怎么样。">Eco-driving displays are usually designed once, the same for every driver. This project asks what happens when an optimiser tunes the display for each person, with that person in the loop.</p>
+  <div class="banner"><img src="../assets/art-driving.png" alt=""></div>
+  <div class="stats">
+    <div class="stat"><b>16</b><span data-en="drivers" data-zh="名驾驶员">drivers</span></div>
+    <div class="stat"><b>21 × 16</b><span data-en="driving rounds" data-zh="轮驾驶实验">driving rounds</span></div>
+    <div class="stat"><b>7</b><span data-en="display parameters" data-zh="个界面参数">display parameters</span></div>
+    <div class="stat"><b>+15.8–18.2</b><span data-en="pts on four experience metrics" data-zh="四项体验指标提升（分）">pts on four experience metrics</span></div>
+  </div>
+</div></header>
+
+<main><div class="wrap prose">
+  <h2 data-en="The platform" data-zh="实验平台">The platform</h2>
+  <p data-en="I built the experimental environment in Unity: a VR driving simulator that combines Google Photorealistic 3D Tiles (via Cesium) with a drivable road network generated from OpenStreetMap — 418 road segments, 28.7 km, 564 junctions around central London. A road-load energy model (rolling and aerodynamic resistance, EV regeneration) produces real-time eco-scores, and the display being optimised is a head-up interface with seven continuous parameters: the sizes of six element types and the overall opacity."
+     data-zh="实验环境是我在 Unity 里搭的 VR 驾驶模拟器：Google 真实感三维瓦片（经 Cesium）叠加 OpenStreetMap 生成的可行驶路网，覆盖伦敦市中心 418 个路段、28.7 公里、564 个路口。道路载荷能耗模型（滚动与空气阻力、制动能量回收）给出实时生态评分；被优化的抬头显示界面有七个连续参数，分别是六类元素的尺寸和整体不透明度。">I built the experimental environment in Unity: a VR driving simulator that combines Google Photorealistic 3D Tiles (via Cesium) with a drivable road network generated from OpenStreetMap — 418 road segments, 28.7 km, 564 junctions around central London. A road-load energy model (rolling and aerodynamic resistance, EV regeneration) produces real-time eco-scores, and the display being optimised is a head-up interface with seven continuous parameters: the sizes of six element types and the overall opacity.</p>
+  <figure>
+    <img src="../assets/proj-driving.png" alt="HUD">
+    <figcaption data-en="The head-up display inside the VR cockpit: eco-score, leaf gauge and speedometer." data-zh="VR 座舱内的抬头显示：生态评分、叶片表盘与车速表。">The head-up display inside the VR cockpit: eco-score, leaf gauge and speedometer.</figcaption>
+  </figure>
+
+  <h2 data-en="The method" data-zh="方法">The method</h2>
+  <p data-en="Sixteen participants each drove 21 short urban rounds: 15 space-filling Sobol sampling rounds, five rounds proposed by a multi-objective Bayesian optimiser, and a final round repeating the recommended configuration. The objectives were a simulated energy-intensity proxy, task load (NASA-TLX), and acceptance (van der Laan). The experiment loop — round control, questionnaires, optimiser bridge, statistical analysis in R — was fully automated."
+     data-zh="十六名参与者每人完成二十一轮短途城区驾驶：十五轮 Sobol 空间填充采样，五轮由多目标贝叶斯优化器提议，最后一轮重复推荐配置。优化目标是模拟能耗强度、任务负荷（NASA-TLX）和接受度（van der Laan）。从轮次控制、问卷发放到优化器桥接和 R 统计分析，整个实验流程全部自动化。">Sixteen participants each drove 21 short urban rounds: 15 space-filling Sobol sampling rounds, five rounds proposed by a multi-objective Bayesian optimiser, and a final round repeating the recommended configuration. The objectives were a simulated energy-intensity proxy, task load (NASA-TLX), and acceptance (van der Laan). The experiment loop — round control, questionnaires, optimiser bridge, statistical analysis in R — was fully automated.</p>
+
+  <h2 data-en="What came out" data-zh="结果">What came out</h2>
+  <p data-en="All sixteen recommended configurations came from the driver’s own Pareto front. Against a same-route sampling reference, they improved task load, informativeness, pleasantness and legibility by 15.8, 19.8, 16.6 and 18.2 points respectively, with no significant change in the energy proxy. The chosen configurations differed markedly between drivers: the leaf gauge survived in eleven of sixteen, the numerical score in only five, and one driver kept nothing but the speedometer and the guidance arrow. The seven parameters varied between participants by 1.3 to 1.9 times their variation within the optimisation rounds — evidence that the personalisation was tracking people, not noise."
+     data-zh="十六套推荐配置全部来自驾驶员本人的 Pareto 前沿。与同路线的采样参考相比，任务负荷、信息性、愉悦度、易读性分别提升 15.8、19.8、16.6、18.2 分，能耗代理指标无显著变化。不同驾驶员得到的配置差异很大：叶片表盘在十六套里保留了十一套，数字评分只有五套保留，有一位驾驶员最后只留下车速表和导航箭头。七个参数在人与人之间的差异是其优化过程内波动的 1.3 到 1.9 倍，说明个性化追踪的是人，而不是噪声。">All sixteen recommended configurations came from the driver’s own Pareto front. Against a same-route sampling reference, they improved task load, informativeness, pleasantness and legibility by 15.8, 19.8, 16.6 and 18.2 points respectively, with no significant change in the energy proxy. The chosen configurations differed markedly between drivers: the leaf gauge survived in eleven of sixteen, the numerical score in only five, and one driver kept nothing but the speedometer and the guidance arrow. The seven parameters varied between participants by 1.3 to 1.9 times their variation within the optimisation rounds — evidence that the personalisation was tracking people, not noise.</p>
+  <p data-en="The main limitation is the single-session design with no independent non-adaptive baseline: the results do not show that personalisation beats a well-designed fixed display, or that energy use would fall in a real vehicle."
+     data-zh="主要的局限在于单次实验设计、没有独立的非自适应基线：结果不能证明个性化一定优于设计良好的固定界面，也不能证明真实车辆上能耗会下降。">The main limitation is the single-session design with no independent non-adaptive baseline: the results do not show that personalisation beats a well-designed fixed display, or that energy use would fall in a real vehicle.</p>
+
+  <div class="links">
+    <a href="https://github.com/ArcadiaE/Sustainable-Personallised-Driving" target="_blank" rel="noopener" data-en="Code on GitHub →" data-zh="代码在 GitHub →">Code on GitHub →</a>
+    <a href="mailto:ucab338@ucl.ac.uk?subject=Thesis%20request" data-en="Ask for the thesis →" data-zh="索取论文 →">Ask for the thesis →</a>
+  </div>
+</div></main>
+
+<footer><div class="wrap"><span>© 2026 Yike Zhang · 张屹柯</span></div></footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('langBtn');
+  function setLang(l){
+    document.documentElement.lang = l==='zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      el.textContent = l==='zh' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+    });
+    btn.textContent = l==='zh' ? 'EN' : '中文';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved || ((navigator.language||'en').toLowerCase().indexOf('zh')===0 ? 'zh' : 'en'));
+  btn.addEventListener('click',function(){
+    setLang(document.documentElement.lang==='zh-CN' ? 'en' : 'zh');
+  });
+})();
+</script>
+</body>
+</html>

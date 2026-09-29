@@ -60,6 +60,8 @@
   .mug::after{content:"";position:absolute;inset:10px -10px -10px 10px;border:1px solid var(--line);border-radius:20px;z-index:-1;transition:inset .3s ease}
   .mug:hover::after{inset:14px -14px -14px 14px}
   .mug figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:14px}
+  .artband{margin-top:64px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .artband img{width:100%;height:clamp(220px,34vw,380px);object-fit:cover;display:block}
 
   /* sections */
   section{padding:72px 0 8px}
@@ -72,7 +74,7 @@
   .prose strong{color:var(--ink);font-weight:500}
 
   /* project rows */
-  .proj{display:grid;grid-template-columns:96px 1fr;gap:8px 28px;padding:28px 0;border-top:1px solid var(--line)}
+  .proj{display:grid;grid-template-columns:96px 1fr 190px;gap:8px 28px;padding:28px 0;border-top:1px solid var(--line);align-items:start}
   .proj:last-of-type{border-bottom:1px solid var(--line)}
   .proj .yr{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:7px;letter-spacing:.04em}
   .proj h3{font-family:var(--serif);font-weight:600;font-size:23px;margin:0 0 6px;letter-spacing:-.01em;transition:color .18s}
@@ -82,7 +84,10 @@
   .proj .go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:500;color:var(--accent)}
   .proj .go .arr{transition:transform .18s}
   .proj .go:hover .arr{transform:translateX(4px)}
-  @media(max-width:640px){.proj{grid-template-columns:1fr;gap:2px}}
+  .proj .thumb{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .proj .thumb img{width:100%;height:118px;object-fit:cover;display:block;transition:transform .4s ease}
+  .proj .thumb:hover img{transform:scale(1.04)}
+  @media(max-width:640px){.proj{grid-template-columns:1fr;gap:10px}.proj .thumb img{height:150px}}
 
   /* education & experience tables */
   .rows{border-top:1px solid var(--line)}
@@ -125,8 +130,8 @@
   <div>
     <div class="eyebrow" data-en="London · PhD applicant, autumn 2027" data-zh="伦敦 · 申请 2027 年秋季博士">London · PhD applicant, autumn 2027</div>
     <h1><span data-en="Yike Zhang" data-zh="张屹柯">Yike Zhang</span><span class="zh" data-en="张屹柯" data-zh="Yike Zhang">张屹柯</span></h1>
-    <p class="sub" data-en="Electronic engineering at Southampton, then AI at UCL. I like systems that have to work in the real world, with real people."
-                   data-zh="本科在南安普顿大学读电子工程，硕士在伦敦大学学院读人工智能。喜欢需要在真实世界里、和真实的人一起工作的系统。">Electronic engineering at Southampton, then AI at UCL. I like systems that have to work in the real world, with real people.</p>
+    <p class="sub" data-en="BEng Electronic Engineering, Southampton (2025) · MSc AI for Sustainable Development, UCL (2026)"
+                   data-zh="南安普顿大学电子工程学士（2025）· 伦敦大学学院人工智能硕士（2026）">BEng Electronic Engineering, Southampton (2025) · MSc AI for Sustainable Development, UCL (2026)</p>
     <div class="cta">
       <a class="btn dark" href="mailto:ucab338@ucl.ac.uk"><span data-en="Email me" data-zh="给我写邮件">Email me</span><span class="arr">→</span></a>
       <a class="btn" href="cv_en.pdf"><span data-en="CV · EN" data-zh="英文简历">CV · EN</span></a>
@@ -138,7 +143,8 @@
     <img src="assets/photo.jpg" alt="Yike Zhang 张屹柯">
     <figcaption data-en="London · 2026" data-zh="伦敦 · 2026">London · 2026</figcaption>
   </figure>
-</div></div></header>
+</div>
+<div class="artband"><img src="assets/art-hero.png" alt=""></div></div></header>
 
 <main>
 
@@ -158,22 +164,25 @@
     <div class="proj">
       <div class="yr">2026</div>
       <div>
-        <h3><a href="https://github.com/ArcadiaE/SustainablePersonallised-Driving" target="_blank" rel="noopener" data-en="Sustainable Personalised Driving" data-zh="可持续的个性化驾驶">Sustainable Personalised Driving</a></h3>
+        <h3><a href="projects/driving.html" data-en="Sustainable Personalised Driving" data-zh="可持续的个性化驾驶">Sustainable Personalised Driving</a></h3>
         <div class="meta" data-en="MSc dissertation · UCL" data-zh="硕士毕业论文 · UCL">MSc dissertation · UCL</div>
         <p data-en="A VR driving simulator built on real map data. A multi-objective Bayesian optimiser personalises eco-driving HUD configurations for each of sixteen drivers over twenty-one rounds."
            data-zh="基于真实地图数据搭建的 VR 驾驶模拟器，多目标贝叶斯优化器在二十一轮实验中为十六位驾驶员各自搜索个性化的生态驾驶界面配置。">A VR driving simulator built on real map data. A multi-objective Bayesian optimiser personalises eco-driving HUD configurations for each of sixteen drivers over twenty-one rounds.</p>
-        <a class="go" href="https://github.com/ArcadiaE/SustainablePersonallised-Driving" target="_blank" rel="noopener"><span data-en="Code on GitHub" data-zh="代码在 GitHub">Code on GitHub</span><span class="arr">→</span></a>
+        <a class="go" href="projects/driving.html"><span data-en="View project" data-zh="查看项目">View project</span><span class="arr">→</span></a>
       </div>
+      <a class="thumb" href="projects/driving.html"><img src="assets/art-driving.png" alt=""></a>
     </div>
 
     <div class="proj">
       <div class="yr">2024–25</div>
       <div>
-        <h3 data-en="Badminton stroke wearable" data-zh="羽毛球击球动作识别腕表">Badminton stroke wearable</h3>
+        <h3><a href="projects/badminton.html" data-en="Badminton stroke wearable" data-zh="羽毛球击球动作识别腕表">Badminton stroke wearable</a></h3>
         <div class="meta" data-en="Undergraduate dissertation · University of Southampton" data-zh="本科毕业设计 · 南安普顿大学">Undergraduate dissertation · University of Southampton</div>
         <p data-en="A wrist-worn device that classifies four stroke types with an SVM (88.95% accuracy) and turns the result into coach-style feedback."
            data-zh="腕戴设备用 SVM 识别四类击球动作（准确率 88.95%），并把识别结果转成教练风格的反馈。">A wrist-worn device that classifies four stroke types with an SVM (88.95% accuracy) and turns the result into coach-style feedback.</p>
+        <a class="go" href="projects/badminton.html"><span data-en="View project" data-zh="查看项目">View project</span><span class="arr">→</span></a>
       </div>
+      <a class="thumb" href="projects/badminton.html"><img src="assets/art-badminton.png" alt=""></a>
     </div>
 
     <div class="proj">
@@ -184,6 +193,7 @@
         <p data-en="A positioning component for sensor manufacturing, and an adjustable optical projection device."
            data-zh="一种传感器制造用定位部件，一种可调式光学投影装置。">A positioning component for sensor manufacturing, and an adjustable optical projection device.</p>
       </div>
+      <div></div>
     </div>
   </div></section>
 
