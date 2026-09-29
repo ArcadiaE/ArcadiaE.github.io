@@ -7,50 +7,54 @@
 <meta name="description" content="MSc dissertation: human-in-the-loop multi-objective Bayesian optimisation of eco-driving interfaces in a VR simulator.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#faf8f4; --card:#ffffff; --ink:#17140f; --ink-2:#5f594f; --ink-3:#9a9284;
-    --line:#e6e0d4; --accent:#a8322a;
-    --serif:"Fraunces",Georgia,"Songti SC","STSong","SimSun",serif;
+    --bg:#0a0e15; --panel:rgba(255,255,255,.035);
+    --ink:#e9edf4; --ink-2:#9aa5b6; --ink-3:#5f6a7d;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+    --teal:#5eead4; --blue:#6ea8ff;
+    --grad:linear-gradient(120deg,#5eead4,#6ea8ff);
+    --disp:"Space Grotesk","Inter",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
     --sans:"Inter",-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--accent);color:#fff}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8b8b2}
-  a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:780px;margin:0 auto;padding:0 28px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--teal);color:#0a0e15}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(94,234,212,.3)}
+  a:hover{border-bottom-color:var(--teal)}
+  .wrap{max-width:800px;margin:0 auto;padding:0 28px}
 
-  nav{border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,21,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
   .back{font-family:var(--mono);font-size:13px;color:var(--ink-2);border:none}
-  .back:hover{color:var(--accent)}
-  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
-  .lang:hover{border-color:var(--accent);color:var(--accent)}
+  .back:hover{color:var(--teal)}
+  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line-2);background:var(--panel);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
+  .lang:hover{border-color:var(--teal);color:var(--teal)}
 
-  header{padding:64px 0 0}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,44px);line-height:1.15;letter-spacing:-.015em;margin:0 0 16px}
-  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 36px}
-  .banner{margin:0 0 40px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  header{padding:72px 0 0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);display:inline-block}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.4vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px}
+  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 38px}
+  .banner{margin:0 0 42px;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(110,168,255,.3)}
   .banner img{width:100%;display:block}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 44px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 48px}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
-  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em}
+  .stat{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
+  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em;color:var(--teal)}
   .stat span{font-size:12.5px;color:var(--ink-3)}
 
-  .prose p{margin:0 0 18px;max-width:66ch}
-  h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:44px 0 14px}
-  figure{margin:28px 0}
-  figure img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+  .prose p{margin:0 0 18px;max-width:66ch;color:#c3cad6}
+  h2{font-family:var(--disp);font-weight:600;font-size:23px;margin:48px 0 14px;letter-spacing:-.01em}
+  figure{margin:30px 0}
+  figure img{width:100%;border:1px solid var(--line-2);border-radius:14px;display:block}
   figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:10px;letter-spacing:.04em}
 
-  .links{margin:48px 0 0;padding:22px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
-  footer{margin-top:56px;border-top:1px solid var(--line);padding:20px 0 44px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
+  .links{margin:52px 0 0;padding:24px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
+  footer{margin-top:60px;border-top:1px solid var(--line);padding:22px 0 48px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
 </style>
 </head>
 <body>
@@ -65,7 +69,7 @@
   <h1 data-en="Sustainable Personalised Driving" data-zh="可持续的个性化驾驶">Sustainable Personalised Driving</h1>
   <p class="lede" data-en="Eco-driving displays are usually designed once, the same for every driver. This project asks what happens when an optimiser tunes the display for each person, with that person in the loop."
      data-zh="生态驾驶的提示界面通常只设计一次，所有人共用。这个项目想问的是：如果让优化器针对每个人分别调整界面，而这个人的感受直接参与优化，会怎么样。">Eco-driving displays are usually designed once, the same for every driver. This project asks what happens when an optimiser tunes the display for each person, with that person in the loop.</p>
-  <div class="banner"><img src="../assets/art-driving.png" alt=""></div>
+  <div class="banner"><img src="../assets/proj-aerial.png" alt=""></div>
   <div class="stats">
     <div class="stat"><b>16</b><span data-en="drivers" data-zh="名驾驶员">drivers</span></div>
     <div class="stat"><b>21 × 16</b><span data-en="driving rounds" data-zh="轮驾驶实验">driving rounds</span></div>
@@ -82,14 +86,27 @@
     <img src="../assets/proj-driving.png" alt="HUD">
     <figcaption data-en="The head-up display inside the VR cockpit: eco-score, leaf gauge and speedometer." data-zh="VR 座舱内的抬头显示：生态评分、叶片表盘与车速表。">The head-up display inside the VR cockpit: eco-score, leaf gauge and speedometer.</figcaption>
   </figure>
+  <figure>
+    <img src="../assets/proj-participant.png" alt="Participant">
+    <figcaption data-en="A participant driving in the VR cockpit during the experiment." data-zh="参与者在 VR 驾驶舱中完成一轮实验驾驶。">A participant driving in the VR cockpit during the experiment.</figcaption>
+  </figure>
 
   <h2 data-en="The method" data-zh="方法">The method</h2>
   <p data-en="Sixteen participants each drove 21 short urban rounds: 15 space-filling Sobol sampling rounds, five rounds proposed by a multi-objective Bayesian optimiser, and a final round repeating the recommended configuration. The objectives were a simulated energy-intensity proxy, task load (NASA-TLX), and acceptance (van der Laan). The experiment loop — round control, questionnaires, optimiser bridge, statistical analysis in R — was fully automated."
      data-zh="十六名参与者每人完成二十一轮短途城区驾驶：十五轮 Sobol 空间填充采样，五轮由多目标贝叶斯优化器提议，最后一轮重复推荐配置。优化目标是模拟能耗强度、任务负荷（NASA-TLX）和接受度（van der Laan）。从轮次控制、问卷发放到优化器桥接和 R 统计分析，整个实验流程全部自动化。">Sixteen participants each drove 21 short urban rounds: 15 space-filling Sobol sampling rounds, five rounds proposed by a multi-objective Bayesian optimiser, and a final round repeating the recommended configuration. The objectives were a simulated energy-intensity proxy, task load (NASA-TLX), and acceptance (van der Laan). The experiment loop — round control, questionnaires, optimiser bridge, statistical analysis in R — was fully automated.</p>
 
+  <figure>
+    <img src="../assets/proj-hud-variants.png" alt="HUD variants">
+    <figcaption data-en="Four of the display configurations the optimiser proposed to different drivers." data-zh="优化器为不同驾驶员提出的四套界面配置。">Four of the display configurations the optimiser proposed to different drivers.</figcaption>
+  </figure>
+
   <h2 data-en="What came out" data-zh="结果">What came out</h2>
   <p data-en="All sixteen recommended configurations came from the driver’s own Pareto front. Against a same-route sampling reference, they improved task load, informativeness, pleasantness and legibility by 15.8, 19.8, 16.6 and 18.2 points respectively, with no significant change in the energy proxy. The chosen configurations differed markedly between drivers: the leaf gauge survived in eleven of sixteen, the numerical score in only five, and one driver kept nothing but the speedometer and the guidance arrow. The seven parameters varied between participants by 1.3 to 1.9 times their variation within the optimisation rounds — evidence that the personalisation was tracking people, not noise."
      data-zh="十六套推荐配置全部来自驾驶员本人的 Pareto 前沿。与同路线的采样参考相比，任务负荷、信息性、愉悦度、易读性分别提升 15.8、19.8、16.6、18.2 分，能耗代理指标无显著变化。不同驾驶员得到的配置差异很大：叶片表盘在十六套里保留了十一套，数字评分只有五套保留，有一位驾驶员最后只留下车速表和导航箭头。七个参数在人与人之间的差异是其优化过程内波动的 1.3 到 1.9 倍，说明个性化追踪的是人，而不是噪声。">All sixteen recommended configurations came from the driver’s own Pareto front. Against a same-route sampling reference, they improved task load, informativeness, pleasantness and legibility by 15.8, 19.8, 16.6 and 18.2 points respectively, with no significant change in the energy proxy. The chosen configurations differed markedly between drivers: the leaf gauge survived in eleven of sixteen, the numerical score in only five, and one driver kept nothing but the speedometer and the guidance arrow. The seven parameters varied between participants by 1.3 to 1.9 times their variation within the optimisation rounds — evidence that the personalisation was tracking people, not noise.</p>
+  <figure>
+    <img src="../assets/proj-pareto.png" alt="Pareto fronts">
+    <figcaption data-en="Per-participant Pareto fronts from the optimisation rounds; each panel is one driver." data-zh="每位参与者在优化轮次中得到的 Pareto 前沿，每格是一位驾驶员。">Per-participant Pareto fronts from the optimisation rounds; each panel is one driver.</figcaption>
+  </figure>
   <p data-en="The main limitation is the single-session design with no independent non-adaptive baseline: the results do not show that personalisation beats a well-designed fixed display, or that energy use would fall in a real vehicle."
      data-zh="主要的局限在于单次实验设计、没有独立的非自适应基线：结果不能证明个性化一定优于设计良好的固定界面，也不能证明真实车辆上能耗会下降。">The main limitation is the single-session design with no independent non-adaptive baseline: the results do not show that personalisation beats a well-designed fixed display, or that energy use would fall in a real vehicle.</p>
 
