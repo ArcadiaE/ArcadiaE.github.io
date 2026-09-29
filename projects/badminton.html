@@ -7,50 +7,54 @@
 <meta name="description" content="Undergraduate dissertation: a wrist-worn device that recognises badminton strokes and gives coach-style feedback.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#faf8f4; --card:#ffffff; --ink:#17140f; --ink-2:#5f594f; --ink-3:#9a9284;
-    --line:#e6e0d4; --accent:#a8322a;
-    --serif:"Fraunces",Georgia,"Songti SC","STSong","SimSun",serif;
+    --bg:#0a0e15; --panel:rgba(255,255,255,.035);
+    --ink:#e9edf4; --ink-2:#9aa5b6; --ink-3:#5f6a7d;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+    --teal:#5eead4; --blue:#6ea8ff;
+    --grad:linear-gradient(120deg,#5eead4,#6ea8ff);
+    --disp:"Space Grotesk","Inter",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
     --sans:"Inter",-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--accent);color:#fff}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8b8b2}
-  a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:780px;margin:0 auto;padding:0 28px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--teal);color:#0a0e15}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(94,234,212,.3)}
+  a:hover{border-bottom-color:var(--teal)}
+  .wrap{max-width:800px;margin:0 auto;padding:0 28px}
 
-  nav{border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,21,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
   .back{font-family:var(--mono);font-size:13px;color:var(--ink-2);border:none}
-  .back:hover{color:var(--accent)}
-  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
-  .lang:hover{border-color:var(--accent);color:var(--accent)}
+  .back:hover{color:var(--teal)}
+  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line-2);background:var(--panel);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
+  .lang:hover{border-color:var(--teal);color:var(--teal)}
 
-  header{padding:64px 0 0}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,44px);line-height:1.15;letter-spacing:-.015em;margin:0 0 16px}
-  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 36px}
-  .banner{margin:0 0 40px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  header{padding:72px 0 0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);display:inline-block}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.4vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px}
+  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 38px}
+  .banner{margin:0 0 42px;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(110,168,255,.3)}
   .banner img{width:100%;display:block}
 
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 44px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 48px}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card)}
-  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em}
+  .stat{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
+  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em;color:var(--teal)}
   .stat span{font-size:12.5px;color:var(--ink-3)}
 
-  .prose p{margin:0 0 18px;max-width:66ch}
-  h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:44px 0 14px}
-  figure{margin:28px 0}
-  figure img{width:100%;border:1px solid var(--line);border-radius:12px;display:block}
+  .prose p{margin:0 0 18px;max-width:66ch;color:#c3cad6}
+  h2{font-family:var(--disp);font-weight:600;font-size:23px;margin:48px 0 14px;letter-spacing:-.01em}
+  figure{margin:30px 0}
+  figure img{width:100%;border:1px solid var(--line-2);border-radius:14px;display:block}
   figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:10px;letter-spacing:.04em}
 
-  .links{margin:48px 0 0;padding:22px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
-  footer{margin-top:56px;border-top:1px solid var(--line);padding:20px 0 44px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
+  .links{margin:52px 0 0;padding:24px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
+  footer{margin-top:60px;border-top:1px solid var(--line);padding:22px 0 48px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
 </style>
 </head>
 <body>
@@ -65,7 +69,7 @@
   <h1 data-en="Badminton Stroke Wearable" data-zh="羽毛球击球动作识别腕表">Badminton Stroke Wearable</h1>
   <p class="lede" data-en="A wrist-worn device that recognises which badminton stroke you just played, and answers back with coach-style feedback."
      data-zh="一块腕戴设备，能认出你刚打的是哪种击球动作，并用教练的口吻给出反馈。">A wrist-worn device that recognises which badminton stroke you just played, and answers back with coach-style feedback.</p>
-  <div class="banner"><img src="../assets/art-badminton.png" alt=""></div>
+  <div class="banner"><img src="../assets/proj-badminton-device.png" alt=""></div>
   <div class="stats">
     <div class="stat"><b>88.95%</b><span data-en="classification accuracy" data-zh="分类准确率">classification accuracy</span></div>
     <div class="stat"><b>4</b><span data-en="stroke classes" data-zh="类击球动作">stroke classes</span></div>
@@ -82,14 +86,14 @@
     <img src="../assets/proj-badminton-cad.png" alt="CAD">
     <figcaption data-en="Exploded view of the enclosure and the placement of each board." data-zh="外壳与电路板布局的爆炸图。">Exploded view of the enclosure and the placement of each board.</figcaption>
   </figure>
-  <figure>
-    <img src="../assets/proj-badminton-device.png" alt="Device">
-    <figcaption data-en="The 3D-printed enclosure with the main board fitted." data-zh="3D 打印外壳，主板已装入。">The 3D-printed enclosure with the main board fitted.</figcaption>
-  </figure>
 
   <h2 data-en="Recognition and feedback" data-zh="识别与反馈">Recognition and feedback</h2>
   <p data-en="A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result."
      data-zh="支持向量机把传入的动作数据流分成四类击球动作，准确率 88.95%，宏平均 F1 为 0.90。识别结果发给 GPT-4o 接口生成教练风格的点评，再由一个 Flask 网页应用展示出来。">A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result.</p>
+  <figure>
+    <img src="../assets/proj-badminton-web.png" alt="Web app">
+    <figcaption data-en="The Flask web app: live sensor stream, the classified stroke, and the generated feedback." data-zh="Flask 网页应用：实时传感数据、识别出的击球动作与生成的反馈建议。">The Flask web app: live sensor stream, the classified stroke, and the generated feedback.</figcaption>
+  </figure>
 
   <div class="links">
     <a href="https://github.com/ArcadiaE/Badminton-Motrion-Detection-Device" target="_blank" rel="noopener" data-en="Code on GitHub →" data-zh="代码在 GitHub →">Code on GitHub →</a>
