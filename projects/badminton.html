@@ -7,51 +7,71 @@
 <meta name="description" content="Undergraduate dissertation: a wrist-worn device that recognises badminton strokes and gives coach-style feedback.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Noto+Serif+SC:wght@500;600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0e15; --panel:rgba(255,255,255,.035);
-    --ink:#e9edf4; --ink-2:#9aa5b6; --ink-3:#5f6a7d;
-    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
-    --teal:#5eead4; --blue:#6ea8ff;
-    --grad:linear-gradient(120deg,#5eead4,#6ea8ff);
-    --disp:"Space Grotesk","Inter",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-    --sans:"Inter",-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --paper:#f7f4ee; --card:#fffefa; --ink:#23211c; --ink-2:#5f594e; --ink-3:#948c7c;
+    --line:#e5dfd1; --line-2:#d2c9b4;
+    --blue:#2e5f8f; --blue-ink:#24507b;
+    --serif:"Newsreader","Noto Serif SC",Georgia,"Songti SC","STSong",serif;
+    --sans:"Geist",-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:"Geist Mono",ui-monospace,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
-  ::selection{background:var(--teal);color:#0a0e15}
-  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(94,234,212,.3)}
-  a:hover{border-bottom-color:var(--teal)}
-  .wrap{max-width:800px;margin:0 auto;padding:0 28px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:var(--blue);color:#fff}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+  a{color:var(--blue-ink);text-decoration:none;border-bottom:1px solid rgba(46,95,143,.3);text-underline-offset:3px}
+  a:hover{border-bottom-color:var(--blue-ink)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px}
 
-  nav{position:sticky;top:0;z-index:50;background:rgba(10,14,21,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .fretband{height:9px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='9'%3E%3Cpath d='M0 8 H22 M3 8 V2 H13 V6 H8 V4' fill='none' stroke='%232e5f8f' stroke-opacity='.34' stroke-width='1.1'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,244,238,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
   .back{font-family:var(--mono);font-size:13px;color:var(--ink-2);border:none}
-  .back:hover{color:var(--teal)}
-  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line-2);background:var(--panel);border-radius:999px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
-  .lang:hover{border-color:var(--teal);color:var(--teal)}
+  .back:hover{color:var(--ink)}
+  .lang{font-family:var(--mono);font-size:12px;border:1px solid var(--line-2);background:var(--card);border-radius:6px;padding:5px 13px;cursor:pointer;color:var(--ink-2)}
+  .lang:hover{border-color:var(--ink);color:var(--ink)}
 
   header{padding:72px 0 0}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);display:inline-block}
-  h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.4vw,46px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px}
-  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 38px}
-  .banner{margin:0 0 42px;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(110,168,255,.3)}
+  .meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5.2vw,46px);line-height:1.14;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+  .lede{font-size:17.5px;color:var(--ink-2);max-width:58ch;margin:0 0 38px;text-wrap:pretty}
+  .banner{margin:0 0 42px;border:1px solid var(--line-2);border-radius:12px;overflow:hidden}
   .banner img{width:100%;display:block}
 
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 48px}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel)}
-  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em;color:var(--teal)}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card)}
+  .stat b{font-family:var(--mono);font-weight:500;font-size:22px;display:block;letter-spacing:-.01em;color:var(--blue-ink);font-variant-numeric:tabular-nums}
   .stat span{font-size:12.5px;color:var(--ink-3)}
 
-  .prose p{margin:0 0 18px;max-width:66ch;color:#c3cad6}
-  h2{font-family:var(--disp);font-weight:600;font-size:23px;margin:48px 0 14px;letter-spacing:-.01em}
+  .prose p{margin:0 0 18px;max-width:68ch;color:#524d43;text-wrap:pretty}
+  h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:52px 0 14px;letter-spacing:-.01em}
   figure{margin:30px 0}
-  figure img{width:100%;border:1px solid var(--line-2);border-radius:14px;display:block}
+  figure img{width:100%;border:1px solid var(--line-2);border-radius:10px;display:block;background:#fff}
   figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:10px;letter-spacing:.04em}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+  @media(max-width:680px){.duo{grid-template-columns:1fr}}
+  .duo figure{margin:0}
+
+  /* 数据流示意 */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:34px 0 8px}
+  .flow .step{flex:1 1 0;min-width:120px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+  .flow .step b{display:block;font-family:var(--serif);font-weight:600;font-size:15px;margin-bottom:3px}
+  .flow .step span{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+  .flow .arr{align-self:center;padding:0 10px;color:var(--blue);font-size:18px}
+
+  /* 网页截图的浏览器框 */
+  .browser{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;background:#fff}
+  .browser .bar{display:flex;align-items:center;gap:7px;background:var(--card);border-bottom:1px solid var(--line);padding:10px 14px}
+  .browser .bar i{width:9px;height:9px;border-radius:50%;display:block}
+  .browser .bar i:nth-child(1){background:#e5a49a}
+  .browser .bar i:nth-child(2){background:#e8cf9a}
+  .browser .bar i:nth-child(3){background:#a8c9a8}
+  .browser .bar span{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em}
+  .browser img{display:block;width:100%}
 
   .links{margin:52px 0 0;padding:24px 0;border-top:1px solid var(--line);display:flex;gap:26px;flex-wrap:wrap;font-size:14.5px}
   footer{margin-top:60px;border-top:1px solid var(--line);padding:22px 0 48px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em}
@@ -59,17 +79,19 @@
 </head>
 <body>
 
+<div class="fretband"></div>
+
 <nav><div class="wrap">
   <a class="back" href="../index.html"><span data-en="← Yike Zhang" data-zh="← 张屹柯">← Yike Zhang</span></a>
   <button class="lang" id="langBtn" type="button">中文</button>
 </div></nav>
 
 <header><div class="wrap">
-  <div class="eyebrow" data-en="Undergraduate dissertation · University of Southampton · 2024–25" data-zh="本科毕业设计 · 南安普顿大学 · 2024–25">Undergraduate dissertation · University of Southampton · 2024–25</div>
   <h1 data-en="Badminton Stroke Wearable" data-zh="羽毛球击球动作识别腕表">Badminton Stroke Wearable</h1>
+  <p class="meta" data-en="Undergraduate dissertation · University of Southampton · 2024–25" data-zh="本科毕业设计 · 南安普顿大学 · 2024–25">Undergraduate dissertation · University of Southampton · 2024–25</p>
   <p class="lede" data-en="A wrist-worn device that recognises which badminton stroke you just played, and answers back with coach-style feedback."
      data-zh="一块腕戴设备，能认出你刚打的是哪种击球动作，并用教练的口吻给出反馈。">A wrist-worn device that recognises which badminton stroke you just played, and answers back with coach-style feedback.</p>
-  <div class="banner"><img src="../assets/proj-badminton-device.png" alt=""></div>
+  <div class="banner"><img src="../assets/bm-worn.jpg" alt=""></div>
   <div class="stats">
     <div class="stat"><b>88.95%</b><span data-en="classification accuracy" data-zh="分类准确率">classification accuracy</span></div>
     <div class="stat"><b>4</b><span data-en="stroke classes" data-zh="类击球动作">stroke classes</span></div>
@@ -80,19 +102,48 @@
 
 <main><div class="wrap prose">
   <h2 data-en="Hardware" data-zh="硬件">Hardware</h2>
-  <p data-en="The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed and the whole unit weighs about thirty grams."
-     data-zh="设备以 Arduino Nano 33 BLE 为主控，配九轴 IMU 和 MAX30102 心率血氧传感器。姿态数据在板上做互补滤波融合，经蓝牙实时传到电脑。外壳 3D 打印，整机约 30 克。">The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed and the whole unit weighs about thirty grams.</p>
-  <figure>
-    <img src="../assets/proj-badminton-cad.png" alt="CAD">
-    <figcaption data-en="Exploded view of the enclosure and the placement of each board." data-zh="外壳与电路板布局的爆炸图。">Exploded view of the enclosure and the placement of each board.</figcaption>
-  </figure>
+  <p data-en="The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams."
+     data-zh="设备以 Arduino Nano 33 BLE 为主控，配九轴 IMU 和 MAX30102 心率血氧传感器。姿态数据在板上做互补滤波融合，经蓝牙实时传到电脑。外壳 3D 打印，用魔术贴绑带固定在手腕上，整机约 30 克。">The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams.</p>
+  <div class="duo">
+    <figure>
+      <img src="../assets/bm-case-cad.png" alt="CAD">
+      <figcaption data-en="Exploded render of the 3D-printed enclosure." data-zh="3D 打印外壳的爆炸效果图。">Exploded render of the 3D-printed enclosure.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/bm-wrist-open.jpg" alt="Internals">
+      <figcaption data-en="The assembled device on the wrist, cover open: main board, charging module and battery." data-zh="戴在手腕上的整机（打开上盖）：主板、充电模块与电池。">The assembled device on the wrist, cover open: main board, charging module and battery.</figcaption>
+    </figure>
+  </div>
 
   <h2 data-en="Recognition and feedback" data-zh="识别与反馈">Recognition and feedback</h2>
   <p data-en="A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result."
      data-zh="支持向量机把传入的动作数据流分成四类击球动作，准确率 88.95%，宏平均 F1 为 0.90。识别结果发给 GPT-4o 接口生成教练风格的点评，再由一个 Flask 网页应用展示出来。">A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result.</p>
+
+  <div class="flow">
+    <div class="step"><b data-en="Wrist device" data-zh="腕戴设备">Wrist device</b><span data-en="IMU · heart rate · SpO2" data-zh="IMU · 心率 · 血氧">IMU · heart rate · SpO2</span></div>
+    <div class="arr">→</div>
+    <div class="step"><b>Bluetooth LE</b><span data-en="real-time stream" data-zh="实时数据流">real-time stream</span></div>
+    <div class="arr">→</div>
+    <div class="step"><b>SVM</b><span data-en="4 stroke classes" data-zh="四类击球动作">4 stroke classes</span></div>
+    <div class="arr">→</div>
+    <div class="step"><b>GPT-4o</b><span data-en="coach-style feedback" data-zh="教练风格点评">coach-style feedback</span></div>
+    <div class="arr">→</div>
+    <div class="step"><b>Flask</b><span data-en="web app" data-zh="网页应用">web app</span></div>
+  </div>
+
   <figure>
-    <img src="../assets/proj-badminton-web.png" alt="Web app">
-    <figcaption data-en="The Flask web app: live sensor stream, the classified stroke, and the generated feedback." data-zh="Flask 网页应用：实时传感数据、识别出的击球动作与生成的反馈建议。">The Flask web app: live sensor stream, the classified stroke, and the generated feedback.</figcaption>
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>localhost:5000 — Badminton Motion Analysis</span></div>
+      <img src="../assets/bm-web-data.png" alt="Sensor data panel">
+    </div>
+    <figcaption data-en="Top half of the web app: the live sensor stream from the wrist device — angular velocity, acceleration, angles and peak count." data-zh="网页应用上半部分：腕戴设备实时传回的数据面板——角速度、加速度、姿态角与峰值计数。">Top half of the web app: the live sensor stream from the wrist device — angular velocity, acceleration, angles and peak count.</figcaption>
+  </figure>
+  <figure>
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>localhost:5000 — Badminton Motion Analysis</span></div>
+      <img src="../assets/bm-web-feedback.png" alt="Prediction and feedback">
+    </div>
+    <figcaption data-en="Bottom half of the same page: the classified stroke (here a forehand) and the training suggestions generated by GPT-4o." data-zh="同一页面的下半部分：识别出的击球动作（这里是正手）与 GPT-4o 生成的训练建议。">Bottom half of the same page: the classified stroke (here a forehand) and the training suggestions generated by GPT-4o.</figcaption>
   </figure>
 
   <div class="links">
@@ -101,6 +152,8 @@
 </div></main>
 
 <footer><div class="wrap"><span>© 2026 Yike Zhang · 张屹柯</span></div></footer>
+
+<div class="fretband"></div>
 
 <script>
 (function(){
