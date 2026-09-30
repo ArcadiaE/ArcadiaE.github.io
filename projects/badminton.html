@@ -91,7 +91,7 @@
   <p class="meta" data-en="Undergraduate dissertation · University of Southampton · 2024–25" data-zh="本科毕业设计 · 南安普顿大学 · 2024–25">Undergraduate dissertation · University of Southampton · 2024–25</p>
   <p class="lede" data-en="A wrist-worn device that recognises which badminton stroke was just played, and returns training suggestions for it."
      data-zh="这块腕表识别佩戴者刚完成的击球属于哪一类，并生成针对性的训练建议。">A wrist-worn device that recognises which badminton stroke was just played, and returns training suggestions for it.</p>
-  <div class="banner"><img src="../assets/bm-worn.jpg" alt=""></div>
+  <div class="banner"><img src="../assets/ai-cover-badminton.jpg" alt=""></div>
   <div class="stats">
     <div class="stat"><b>88.95%</b><span data-en="classification accuracy" data-zh="分类准确率">classification accuracy</span></div>
     <div class="stat"><b>4</b><span data-en="stroke classes" data-zh="类击球动作">stroke classes</span></div>
@@ -114,6 +114,10 @@
       <figcaption data-en="The assembled device on the wrist, cover open: main board, charging module and battery." data-zh="戴在手腕上的整机（打开上盖）：主板、充电模块与电池。">The assembled device on the wrist, cover open: main board, charging module and battery.</figcaption>
     </figure>
   </div>
+  <figure>
+    <img src="../assets/bm-worn.jpg" alt="Worn on wrist">
+    <figcaption data-en="The finished device worn on the wrist." data-zh="整机戴在手腕上的样子。">The finished device worn on the wrist.</figcaption>
+  </figure>
 
   <h2 data-en="Recognition and feedback" data-zh="识别与反馈">Recognition and feedback</h2>
   <p data-en="A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result."
