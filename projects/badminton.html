@@ -93,17 +93,17 @@
      data-zh="这块腕表识别佩戴者刚打出的击球动作，并给出训练建议。">A wrist-worn device that recognises which badminton stroke was just played, and returns training suggestions for it.</p>
   <div class="banner"><img src="../assets/ai-cover-badminton.jpg" alt=""></div>
   <div class="stats">
-    <div class="stat"><b>88.95%</b><span data-en="classification accuracy" data-zh="分类准确率">classification accuracy</span></div>
+    <div class="stat"><b>77.37%</b><span data-en="classification accuracy" data-zh="分类准确率">classification accuracy</span></div>
     <div class="stat"><b>4</b><span data-en="stroke classes" data-zh="类击球动作">stroke classes</span></div>
     <div class="stat"><b>≈30 g</b><span data-en="total weight" data-zh="整机重量">total weight</span></div>
-    <div class="stat"><b>0.90</b><span data-en="macro F1" data-zh="宏平均 F1">macro F1</span></div>
+    <div class="stat"><b>0.76</b><span data-en="macro F1" data-zh="宏平均 F1">macro F1</span></div>
   </div>
 </div></header>
 
 <main><div class="wrap prose">
   <h2 data-en="Hardware" data-zh="硬件">Hardware</h2>
-  <p data-en="The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams."
-     data-zh="设备以 Arduino Nano 33 BLE 为主控，配九轴 IMU 和 MAX30102 心率血氧传感器。姿态数据在板上做互补滤波融合，经蓝牙实时传到电脑。外壳 3D 打印，用魔术贴绑带固定在手腕上，整机约 30 克。">The device pairs an Arduino Nano 33 BLE with a nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams.</p>
+  <p data-en="The device pairs an Arduino Nano 33 BLE Sense Rev2 with its on-board nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams."
+     data-zh="设备以 Arduino Nano 33 BLE Sense Rev2 为主控，用板载九轴 IMU 和 MAX30102 心率血氧传感器。姿态数据在板上做互补滤波融合，经蓝牙实时传到电脑。外壳 3D 打印，用魔术贴绑带固定在手腕上，整机约 30 克。">The device pairs an Arduino Nano 33 BLE Sense Rev2 with its on-board nine-axis IMU and a MAX30102 heart-rate and SpO2 sensor. Attitude data is fused on board with a complementary filter and streamed over Bluetooth to a laptop. The enclosure is 3D-printed, mounted on a Velcro strap, and the whole unit weighs about thirty grams.</p>
   <div class="duo">
     <figure>
       <img src="../assets/bm-case-cad.png" alt="CAD">
@@ -120,8 +120,8 @@
   </figure>
 
   <h2 data-en="Recognition and feedback" data-zh="识别与反馈">Recognition and feedback</h2>
-  <p data-en="A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result."
-     data-zh="支持向量机把传入的动作数据流分成四类击球动作，准确率 88.95%，宏平均 F1 为 0.90。识别结果发给 GPT-4o 接口生成教练风格的点评，再由一个 Flask 网页应用展示出来。">A support-vector machine classifies the incoming motion stream into four stroke types, reaching 88.95% accuracy with a macro F1 of 0.90. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result.</p>
+  <p data-en="A support-vector machine classifies the incoming motion stream into four stroke types, reaching 77.37% accuracy with a macro F1 of 0.76. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result."
+     data-zh="支持向量机把传入的动作数据流分成四类击球动作，准确率 77.37%，宏平均 F1 为 0.76。识别结果发给 GPT-4o 接口生成教练风格的点评，再由一个 Flask 网页应用展示出来。">A support-vector machine classifies the incoming motion stream into four stroke types, reaching 77.37% accuracy with a macro F1 of 0.76. The recognised stroke is sent to the GPT-4o API, which returns coach-style feedback, and a small Flask web app presents the result.</p>
 
   <div class="flow">
     <div class="step"><b data-en="Wrist device" data-zh="腕戴设备">Wrist device</b><span data-en="IMU · heart rate · SpO2" data-zh="IMU · 心率 · 血氧">IMU · heart rate · SpO2</span></div>
@@ -151,7 +151,7 @@
   </figure>
 
   <div class="links">
-    <a href="https://github.com/ArcadiaE/Badminton-Motrion-Detection-Device" target="_blank" rel="noopener" data-en="Code on GitHub →" data-zh="代码在 GitHub →">Code on GitHub →</a>
+    <a href="https://github.com/ArcadiaE/Badminton-Motion-Detection-Device" target="_blank" rel="noopener" data-en="Code on GitHub →" data-zh="代码在 GitHub →">Code on GitHub →</a>
   </div>
 </div></main>
 
